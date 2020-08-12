@@ -1,0 +1,11 @@
+{
+	"hotel": "Hotel 1",
+	"hotelRate": 3,
+	"roomAmenities": [
+		"Air Conditioner",
+		"TV",
+		"Playstation",
+		"Play Ground"
+	],
+	"hotelFare": 145.5
+}

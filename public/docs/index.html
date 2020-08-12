@@ -1,0 +1,347 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/all.js"></script>
+
+
+          <script>
+        $(function() {
+            setupLanguages(["bash","javascript"]);
+        });
+      </script>
+      </head>
+
+  <body class="">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+        <img src="images/logo.png" />
+                    <div class="lang-selector">
+                                  <a href="#" data-language-name="bash">bash</a>
+                                  <a href="#" data-language-name="javascript">javascript</a>
+                            </div>
+                            <div class="search">
+              <input type="text" class="search" id="input-search" placeholder="Search">
+            </div>
+            <ul class="search-results"></ul>
+              <div id="toc">
+      </div>
+                    <ul class="toc-footer">
+                                  <li><a href='http://github.com/mpociot/documentarian'>Documentation Powered by Documentarian</a></li>
+                            </ul>
+            </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+          <!-- START_INFO -->
+<h1>Info</h1>
+<p>Welcome to the generated API reference.
+<a href="http://localhost/docs/collection.json">Get Postman Collection</a></p>
+<!-- END_INFO -->
+<h1>Hotel Explore</h1>
+<p>APIs fetching hotels from different providers</p>
+<!-- START_5ed24fcefc3cd3c1514981d2343645e9 -->
+<h2>api/our-hotels</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/api/our-hotels" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"page":3,"city":"CAI.","from":"2020-01-15","to":"2020-08-20","adults_number":3}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/our-hotels"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "page": 3,
+    "city": "CAI.",
+    "from": "2020-01-15",
+    "to": "2020-08-20",
+    "adults_number": 3
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "hotelName": "Hotel 1",
+    "fare": 152.5,
+    "amenities": [
+        "Air Conditioner",
+        "TV",
+        "Playstation",
+        "Play Ground"
+    ],
+    "provider": "TopHotels"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/our-hotels</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>page</code></td>
+<td>integer</td>
+<td>optional</td>
+<td>optional The page of search by default it is set to 1.</td>
+</tr>
+<tr>
+<td><code>city</code></td>
+<td>string</td>
+<td>optional</td>
+<td>optional IATA code of the city.</td>
+</tr>
+<tr>
+<td><code>from</code></td>
+<td>date</td>
+<td>optional</td>
+<td>optional starting date of availability of Hotel.</td>
+</tr>
+<tr>
+<td><code>to</code></td>
+<td>date</td>
+<td>optional</td>
+<td>optional end date of availability of Hotel.</td>
+</tr>
+<tr>
+<td><code>adults_number</code></td>
+<td>integer</td>
+<td>optional</td>
+<td>optional The count of people desired for reservation.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_5ed24fcefc3cd3c1514981d2343645e9 -->
+<!-- START_13ff88a46b8e637a12ef9f26c4a6418b -->
+<h2>api/best-hotels</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/api/best-hotels" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"page":3,"city":"CAI.","from":"2020-01-15","to":"2020-08-20","numberOfAdults":3}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/best-hotels"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "page": 3,
+    "city": "CAI.",
+    "from": "2020-01-15",
+    "to": "2020-08-20",
+    "numberOfAdults": 3
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "hotel": "Hotel 1",
+    "hotelRate": 3,
+    "roomAmenities": [
+        "Air Conditioner",
+        "TV",
+        "Playstation",
+        "Play Ground"
+    ],
+    "hotelFare": 145.5
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/best-hotels</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>page</code></td>
+<td>integer</td>
+<td>optional</td>
+<td>optional The page of search by default it is set to 1.</td>
+</tr>
+<tr>
+<td><code>city</code></td>
+<td>string</td>
+<td>optional</td>
+<td>optional IATA code of the city.</td>
+</tr>
+<tr>
+<td><code>from</code></td>
+<td>date</td>
+<td>optional</td>
+<td>optional starting date of availability of Hotel.</td>
+</tr>
+<tr>
+<td><code>to</code></td>
+<td>date</td>
+<td>optional</td>
+<td>optional end date of availability of Hotel.</td>
+</tr>
+<tr>
+<td><code>numberOfAdults</code></td>
+<td>integer</td>
+<td>optional</td>
+<td>optional The count of people desired for reservation.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_13ff88a46b8e637a12ef9f26c4a6418b -->
+<!-- START_c4597bcafe18964d13c5bc7741ee0fd2 -->
+<h2>api/top-hotels</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/api/top-hotels" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"page":3,"city":"CAI.","from":"2020-01-15","to":"2020-08-20","adultsCount":3}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/top-hotels"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "page": 3,
+    "city": "CAI.",
+    "from": "2020-01-15",
+    "to": "2020-08-20",
+    "adultsCount": 3
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "hotelName": "Hotel 1",
+    "rate": "***",
+    "roomAmenities": [
+        "Air Conditioner",
+        "TV",
+        "Playstation",
+        "Play Ground"
+    ],
+    "price": 145.5
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/top-hotels</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>page</code></td>
+<td>integer</td>
+<td>optional</td>
+<td>optional The page of search by default it is set to 1.</td>
+</tr>
+<tr>
+<td><code>city</code></td>
+<td>string</td>
+<td>optional</td>
+<td>optional IATA code of the city.</td>
+</tr>
+<tr>
+<td><code>from</code></td>
+<td>date</td>
+<td>optional</td>
+<td>optional starting date of availability of Hotel.</td>
+</tr>
+<tr>
+<td><code>to</code></td>
+<td>date</td>
+<td>optional</td>
+<td>optional end date of availability of Hotel.</td>
+</tr>
+<tr>
+<td><code>adultsCount</code></td>
+<td>integer</td>
+<td>optional</td>
+<td>optional The count of people desired for reservation.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_c4597bcafe18964d13c5bc7741ee0fd2 -->
+      </div>
+      <div class="dark-box">
+                        <div class="lang-selector">
+                                    <a href="#" data-language-name="bash">bash</a>
+                                    <a href="#" data-language-name="javascript">javascript</a>
+                              </div>
+                </div>
+    </div>
+  </body>
+</html>

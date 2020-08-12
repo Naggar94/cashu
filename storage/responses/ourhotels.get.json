@@ -1,0 +1,11 @@
+{
+	"hotelName": "Hotel 1",
+	"fare": 152.5,
+	"amenities": [
+		"Air Conditioner",
+		"TV",
+		"Playstation",
+		"Play Ground"
+	],
+	"provider": "TopHotels"
+}
